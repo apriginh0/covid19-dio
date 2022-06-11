@@ -15,7 +15,7 @@ function Panel({updateAt, onChange, data, country, getCoviddata}) {
       </ItemStyled>
     </MenuItem>
   )
-  const textCovid19 = `País: ${country}`
+  const textCovid19 = `País: ${country} - recuperados: ${recovered}`
   const copyInfo = () => {
     navigator.clipboard.writeText(textCovid19)
   }
@@ -53,7 +53,7 @@ function Panel({updateAt, onChange, data, country, getCoviddata}) {
             </Select>
           </div>
         </div>
-        {navigatorHasShare ? renderShareButton : renderCopyButton}
+        {navigatorHasShare ? renderCopyButton : renderShareButton}
       </CardPanelContentStyled>
     </Card>
   )
