@@ -23,19 +23,19 @@ function Panel({updateAt, onChange, data, country, getCoviddata}) {
     navigator.share({
       title: `Dados do Covid19 - ${country}`,
       text: textCovid19,
-      url: 'https://covidiego.netlify.app/'
+      url: 'covidiego.netlify.app/'
     })
   }
   const renderShareButton = (
     <div>
-      <button variant ="contained" color="primary" onClick={shareInfo}>
+      <Button variant ="contained" color="primary" onClick={shareInfo}>
         Compartilhar
-      </button>
+      </Button>
     </div>
   )
   const renderCopyButton = (
     <div>
-      <Button variant="container" color="primary" onClick={copyInfo}>
+      <Button variant="contained" color="primary" onClick={copyInfo}>
         Copiar
       </Button>
     </div>
@@ -53,7 +53,7 @@ function Panel({updateAt, onChange, data, country, getCoviddata}) {
             </Select>
           </div>
         </div>
-        {navigatorHasShare ? renderCopyButton : renderShareButton}
+        {!navigatorHasShare ? renderShareButton : renderCopyButton}
       </CardPanelContentStyled>
     </Card>
   )
